@@ -14,12 +14,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run reset-project` - Reset to blank project (moves current code to app-example/)
 
 ### Testing
-No test framework is currently configured in this project.
+- `npm test` - Run Jest test suite
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage report
+- **Framework**: Jest 30 with React Native Testing Library
+- **Setup**: Configured for React Native with jsdom environment
+- **Type support**: @types/jest installed for TypeScript integration
 
 ### TypeScript
 - Uses strict TypeScript configuration extending `expo/tsconfig.base`
 - Path alias `@/*` maps to project root
 - All `.ts` and `.tsx` files are included
+- Jest types configured for test files
 
 ## Architecture Overview
 
@@ -55,6 +61,8 @@ This is an **Expo React Native application** using:
 - `constants/` - Colors and other app constants
 - `hooks/` - Custom React hooks
 - `assets/` - Images, fonts, and static assets
+- `types/` - TypeScript type definitions
+- `__tests__/` - Jest test files
 
 ### Cross-Platform Features
 - iOS: SF Symbols, haptic feedback, blur effects, tab bar transparency
