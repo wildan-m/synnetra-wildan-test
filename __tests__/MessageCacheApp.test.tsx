@@ -235,7 +235,7 @@ describe('MessageCacheApp Integration Tests', () => {
       
       try {
         await AsyncStorage.setItem(MESSAGES_STORAGE_KEY, JSON.stringify([validMessage, validMessage]));
-      } catch (error) {
+      } catch {
         // Even after error, we can still read the previous valid state
         mockAsyncStorage.getItem.mockResolvedValue(JSON.stringify([validMessage]));
         const result = await AsyncStorage.getItem(MESSAGES_STORAGE_KEY);
